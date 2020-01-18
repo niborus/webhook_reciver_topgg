@@ -1,3 +1,5 @@
+CREATE DATABASE `topgg`;
+
 CREATE TABLE `topgg`.`votes` (
     `entry_id` INT NOT NULL AUTO_INCREMENT COMMENT 'The ID for this database.' ,
     `bot` BIGINT NOT NULL COMMENT 'ID of the bot that received a vote' ,
