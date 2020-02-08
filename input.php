@@ -6,8 +6,8 @@ error_reporting(E_ALL);
 //Free to choose Variables:
 $token = "T0k3n"; //Insert you're Token here. You need to generate this Token by yourself.
 $save = "db"; //Either "db" for MySQL-Database or "file" for file.
-$sql_username = "user";
-$sql_passwd = "password";
+$sql_username = "skript";
+$sql_passwd = "5rTCZ0L1vg6hXx62";
 
 //Variables set throught the git
 $db_name = "topgg";
@@ -18,7 +18,7 @@ function kill($code, $body)
         http_response_code($code);
         die("{'error': '" . $body . "'}");
 }
-
+CREATE USER 'webhook'@'%' IDENTIFIED WITH mysql_native_password AS '***';GRANT ALL PRIVILEGES ON `topgg`.* TO 'webhook'@'%';
 
 //Checks, if Token is valid:
 if (!(isset($_GET["token"]))){
