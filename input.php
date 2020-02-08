@@ -6,7 +6,7 @@ error_reporting(E_ALL);
 //Free to choose Variables:
 $token = "T0k3n"; //Insert you're Token here. You need to generate this Token by yourself.
 $save = "db"; //Either "db" for MySQL-Database or "file" for file.
-$sql_username = "skript";
+$sql_username = "webhook";
 $sql_passwd = "5rTCZ0L1vg6hXx62";
 
 //Variables set throught the git
