@@ -32,7 +32,11 @@ $json = file_get_contents('php://input');
 
 //Converts JSON into a PHP object
 $data = json_decode($json);
-var_dump($data)
+var_dump(file_get_contents('php://input'));
+
+if ($data == NULL or $json == "") {
+	kill(400, "Missing body");
+}
 
 // For Database-Users
 if ($save == "db") {
@@ -60,7 +64,7 @@ if ($save == "db") {
         if($stmt->execute()) {
                 kill(200, "");
         } else {
-                kill(500, "Cant write to database.")
+                kill(500, "Cant write to database.");
         }
 
 }
