@@ -59,7 +59,7 @@ if ($save == "db") {
         // Add Timestamp
         $timestamp = date('U');
 
-        kill(200, "")
+        kill(200, "");
 
 }
 
