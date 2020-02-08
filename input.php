@@ -32,6 +32,7 @@ $json = file_get_contents('php://input');
 
 //Converts JSON into a PHP object
 $data = json_decode($json);
+var_dump($data)
 
 // For Database-Users
 if ($save == "db") {
@@ -47,8 +48,6 @@ if ($save == "db") {
         }
         $stmt->bind_param("iisii", $bot_id, $user_id, $val_type, $val_isWeekend, $timestamp);
 
-        $stmt->execute();
-
         //Reads recived Data.
         $user_id = $data->user;
         $bot_id = $data->bot;
@@ -58,7 +57,11 @@ if ($save == "db") {
         // Add Timestamp
         $timestamp = date('U');
 
-        kill(200, "");
+        if($stmt->execute()) {
+                kill(200, "");
+        } else {
+                kill(500, "Cant write to database.")
+        }
 
 }
 
