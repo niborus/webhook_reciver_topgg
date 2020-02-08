@@ -18,7 +18,6 @@ function kill($code, $body)
         http_response_code($code);
         die("{'error': '" . $body . "'}");
 }
-CREATE USER 'webhook'@'%' IDENTIFIED WITH mysql_native_password AS '***';GRANT ALL PRIVILEGES ON `topgg`.* TO 'webhook'@'%';
 
 //Checks, if Token is valid:
 if (!(isset($_GET["token"]))){
